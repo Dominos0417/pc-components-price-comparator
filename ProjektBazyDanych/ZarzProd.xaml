@@ -1,0 +1,67 @@
+﻿<Window x:Class="ProjektBazyDanych.ZarzProd"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjektBazyDanych"
+        mc:Ignorable="d"
+        Title="ZarzProd" Height="450" Width="800">
+    <Grid Margin="10">
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                <GradientStop Color="#E3F2FD" Offset="0"/>
+                <GradientStop Color="White" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        <!-- Lista produktów -->
+        <Label Content="Lista produktów:" FontWeight="Bold" FontSize="16" Foreground="#0D47A1" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <ListBox x:Name="LbProdukty" HorizontalAlignment="Center" Height="180" Margin="0,40,0,0" VerticalAlignment="Top" Width="750" Background="#E1F5FE" BorderBrush="#2196F3"/>
+
+        <!-- Sekcja dodawania produktu -->
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Margin="30,230,0,0">
+            <Label Content="Wybierz kategorię produktu" Foreground="#0D47A1" FontWeight="Bold"/>
+            <ComboBox x:Name="CbKategoria" SelectedValuePath="Tag" Width="160" Height="25" Foreground="#0D47A1" BorderBrush="#2196F3" Margin="0,5,0,10">
+                <ComboBox.Background>
+                    <LinearGradientBrush EndPoint="0,1">
+                        <GradientStop Color="#FFF0F0F0"/>
+                        <GradientStop Color="#FFE3F2FD" Offset="1"/>
+                    </LinearGradientBrush>
+                </ComboBox.Background>
+                <ComboBoxItem Content="Płyty główne" Tag="1" />
+                <ComboBoxItem Content="Dyski HDD" Tag="2" />
+                <ComboBoxItem Content="Dyski SSD" Tag="3" />
+                <ComboBoxItem Content="Pamięć RAM" Tag="4" />
+                <ComboBoxItem Content="Procesory" Tag="5" />
+                <ComboBoxItem Content="Zasilacze" Tag="6" />
+            </ComboBox>
+
+<TextBox x:Name="tbNazwa" Width="160" Margin="0,5" 
+         Background="White" BorderBrush="#2196F3" Foreground="Gray"
+         Text="Podaj nazwę produktu" 
+         GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus"/>
+
+<TextBox x:Name="tbOpis" Width="160" Margin="0,5" 
+         Background="White" BorderBrush="#2196F3" Foreground="Gray"
+         Text="Podaj krótki opis produktu"
+         GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus"/>
+            <Button x:Name="btnDodaj" Content="Dodaj" Width="160" Height="45" Background="#64B5F6" Foreground="White" Margin="0,10,0,0"/>
+        </StackPanel>
+
+        <!-- Sekcja usuwania produktu -->
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Right" Margin="0,230,30,0">
+            <Label Content="Aby usunąć produkt, podaj jego ID" Foreground="#0D47A1" FontWeight="Bold"/>
+            <TextBox x:Name="tbProduktID" Width="160" Margin="0,5" 
+            Background="White" BorderBrush="#2196F3" Foreground="Gray"
+            Text="Podaj ID produktu"
+            GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus"/>
+            <Button x:Name="btnUsuń" Content="Usuń" Width="160" Height="45" Background="#2196F3" Foreground="White" Margin="0,10,0,0"/>
+        </StackPanel>
+
+        <!-- Przycisk Wyświetl produkty -->
+        <Button x:Name="btnProduktyWys" Content="Wyświelt Produkty" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,240,0,0" Width="180" Height="35" Background="#90CAF9" Foreground="Black"/>
+
+        <!-- Przycisk powrotu -->
+        <Button x:Name="btnPowrót" Content="Wróć" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,20" Height="42" Width="150" Background="#BBDEFB" Foreground="Black" Click="BtnPowrót_Click"/>
+    </Grid>
+</Window>

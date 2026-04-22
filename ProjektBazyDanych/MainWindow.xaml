@@ -1,0 +1,50 @@
+﻿<Window x:Class="ProjektBazyDanych.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjektBazyDanych"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid Margin="10">
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                <GradientStop Color="#E3F2FD" Offset="0"/>
+                <GradientStop Color="White" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        <!-- Nagłówek -->
+        <Label Content="Witaj w wyszukiwarce podzespołów komputerowych"
+               HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,20,0,0"
+               FontSize="24" FontWeight="Bold" Foreground="#0D47A1"/>
+
+        <!-- Główny przycisk wyszukiwania -->
+        <Button Content="Wyszukiwanie produktów"
+                HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,100,0,0"
+                Width="280" Height="100" FontSize="16" FontWeight="SemiBold"
+                Background="#64B5F6" Foreground="White"
+                Click="Wyszukiwanie_Click"/>
+
+        <!-- Zarządzanie produktami -->
+        <Button Content="Zarządzanie produktami"
+                HorizontalAlignment="Left" Margin="90,230,0,0" VerticalAlignment="Top"
+                Width="200" Height="80" FontSize="14"
+                Background="#90CAF9" Foreground="Black"
+                Click="ZarzProd_Click"/>
+
+        <!-- Zarządzanie sklepami -->
+        <Button Content="Zarządzanie sklepami"
+                HorizontalAlignment="Right" Margin="0,230,90,0" VerticalAlignment="Top"
+                Width="200" Height="80" FontSize="14"
+                Background="#90CAF9" Foreground="Black"
+                Click="ZarzSklep_Click"/>
+
+        <!-- Wyłącz aplikację -->
+        <Button x:Name="btnWyłącz" Content="Wyłącz aplikację"
+                HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,30"
+                Width="160" Height="50" FontSize="14"
+                Background="#EF9A9A" Foreground="White"
+                Click="btnWyłącz_Click"/>
+    </Grid>
+</Window>

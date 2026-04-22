@@ -1,0 +1,78 @@
+﻿<Window x:Class="ProjektBazyDanych.ZarzSklep"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjektBazyDanych"
+        mc:Ignorable="d"
+        Title="ZarzSklep" Height="450" Width="800">
+    <Grid Margin="10">
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                <GradientStop Color="#E3F2FD" Offset="0" />
+                <GradientStop Color="White" Offset="1" />
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        <!-- Nagłówek i lista -->
+        <Label Content="Lista pozycji:" FontWeight="Bold" FontSize="16" Foreground="#0D47A1" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <ListBox x:Name="LbPozycje" SelectionChanged="LbPozycje_SelectionChanged" HorizontalAlignment="Center" Height="150" Margin="0,40,0,0" VerticalAlignment="Top" Width="700" Background="#E1F5FE" BorderBrush="#2196F3"/>
+
+        <!-- Pola tekstowe i combo box -->
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,200,0,0">
+            <TextBox x:Name="TbIDProduktu" Text="Id Produktu" Width="100" Margin="5,0"
+            Background="White" BorderBrush="#2196F3" Foreground="Gray"
+            GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus"/>
+            <StackPanel Margin="5,0">
+                <Label Content="Sklep?" HorizontalAlignment="Left" Foreground="#0D47A1"/>
+                <ComboBox x:Name="CbSklep" SelectedValuePath="Tag" Width="100" Foreground="#0D47A1" BorderBrush="#2196F3">
+                    <ComboBox.Background>
+                        <LinearGradientBrush EndPoint="0,1">
+                            <GradientStop Color="#FFF0F0F0"/>
+                            <GradientStop Color="#FFE3F2FD" Offset="1"/>
+                        </LinearGradientBrush>
+                    </ComboBox.Background>
+                    <ComboBoxItem Content="Morele.net" Tag="1" />
+                    <ComboBoxItem Content="Komputronik" Tag="2"/>
+                    <ComboBoxItem Content="X-kom" Tag="3"/>
+                    <ComboBoxItem Content="Media Expert" Tag="4"/>
+                </ComboBox>
+            </StackPanel>
+            <TextBox x:Name="TbCena" Text="Cena" Width="100" Margin="5,0"
+            Background="White" BorderBrush="#2196F3" Foreground="Gray"
+            GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus"/>
+            <StackPanel Margin="5,0">
+                <Label Content="Dostępny?" HorizontalAlignment="Left" Foreground="#0D47A1"/>
+                <ComboBox x:Name="CbDostepnosc" Width="100" Foreground="#0D47A1" BorderBrush="#2196F3">
+                    <ComboBox.Background>
+                        <LinearGradientBrush EndPoint="0,1">
+                            <GradientStop Color="#FFF0F0F0"/>
+                            <GradientStop Color="#FFE3F2FD" Offset="1"/>
+                        </LinearGradientBrush>
+                    </ComboBox.Background>
+                    <ComboBoxItem Content="Tak" />
+                    <ComboBoxItem Content="Nie" />
+                </ComboBox>
+            </StackPanel>
+        </StackPanel>
+
+        <!-- Przyciski akcji -->
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,270,0,0">
+            <Button x:Name="BtnPokaWszystkie" Content="Wyświetl wszystkie" Width="120" Height="45" Background="#64B5F6" Foreground="White" Margin="10,0" Click="BtnPokaWszystkie_Click"/>
+            <Button x:Name="BtnDodaj" Content="Dodaj" Width="120" Height="45" Background="#64B5F6" Foreground="White" Margin="10,0" Click="BtnDodaj_Click"/>
+            <Button x:Name="BtnEdytuj" Content="Edytuj" Width="120" Height="45" Background="#42A5F5" Foreground="White" Margin="10,0"/>
+            <Button x:Name="BtnUsun" Content="Usuń" Width="120" Height="45" Background="#2196F3" Foreground="White" Margin="10,0"/>
+        </StackPanel>
+
+        <!-- Wyszukiwanie po ID -->
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Margin="30,340,0,0">
+            <TextBox x:Name="TbIDProduktuDoWyświetlenia" Text="Id produktu do wyświetlenia" Width="160"
+            Background="White" BorderBrush="#2196F3" Foreground="Gray"
+            GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus"/>
+            <Button x:Name="BtnWyszukajPoIDProduktu" Content="Wyszukaj" Width="160" Margin="0,10,0,0" Background="#1976D2" Foreground="White"/>
+        </StackPanel>
+
+        <!-- Powrót -->
+        <Button x:Name="BtnPowrot" Content="Wróć" HorizontalAlignment="Right" Margin="0,0,30,30" VerticalAlignment="Bottom" Height="45" Width="100" Background="#90CAF9" Foreground="Black"/>
+    </Grid>
+</Window>
